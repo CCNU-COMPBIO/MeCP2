@@ -1,0 +1,36 @@
+Production MD: 200 ns, 310 K, no restraints
+&cntrl
+  imin=0,              ! Perform MD
+  nstlim=200000000,    ! 200 ns = 200000 ps; dt=0.001 ps -> 200000000 steps
+
+  ntx=5,               ! Read coordinates and velocities from restart
+  irest=1,             ! Restart calculation
+
+  ntc=2,               ! SHAKE bonds involving hydrogen
+  ntf=2,               ! Do not calculate forces for bonds involving hydrogen
+  dt=0.001,            ! Timestep = 1 fs = 0.001 ps
+
+  ntb=2,               ! Constant pressure periodic boundary condition
+  ntp=1,               ! Isotropic pressure scaling
+  barostat=1,          ! Berendsen barostat
+  taup=0.5,            ! Pressure relaxation time, ps
+
+  ntt=3,               ! Langevin thermostat
+  gamma_ln=2.0,        ! Collision frequency
+  ig=-1,               ! Random seed
+  temp0=310.0,         ! Simulation temperature, K
+
+  ntwx=50000,          ! Write trajectory every 50000 steps
+                       ! 200000000 / 50000 = 4000 frames
+
+  ntpr=50000,          ! Print energy every 50000 steps
+  ntwr=5000000,        ! Write restart every 5000000 steps = every 5 ns
+
+  cut=8.0,             ! Nonbonded cutoff, Angstroms
+
+  ntr=0,               ! No restraints during production
+
+  ntxo=2,              ! Write restart in NetCDF format
+  ioutfm=1,            ! Write trajectory in NetCDF format
+  iwrap=1,             ! Wrap coordinates into periodic box
+/

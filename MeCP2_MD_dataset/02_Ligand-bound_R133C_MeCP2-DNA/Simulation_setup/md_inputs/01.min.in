@@ -1,0 +1,31 @@
+Ligand-only restrained minimization; parameters matched to the previous Min.in
+&cntrl
+  imin=1,
+  ntx=1,
+  irest=0,
+
+  maxcyc=20000,
+  ncyc=10000,
+
+  ntpr=10,
+  ntf=1,
+  ntb=1,
+  nsnb=10,
+  ntmin=1,
+  ntwx=10,
+  ntwr=10,
+
+  cut=10.0,
+
+  ntr=1,
+  restraintmask=":1-110 & !@H=",
+  restraint_wt=5.0,
+
+  ntxo=2,
+  ioutfm=1,
+/
+&ewald
+  ew_type=0,
+  skinnb=2.0,
+  vdwmeth=1,
+/
