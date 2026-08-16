@@ -1,0 +1,10 @@
+receptor = Arg133Cys_pro.pdbqt
+center_x = 43.728
+center_y = 20.58
+center_z = 38.258
+size_x = 58
+size_y = 62
+size_z = 40
+exhaustiveness = 32
+energy_range = 4
+num_modes = 9
