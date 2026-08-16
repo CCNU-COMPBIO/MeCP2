@@ -1,0 +1,7 @@
+This is the additional parameter set for 5-methyl-cytosine
+ANGLE
+CA-CM-CT    70.0      119.70      from thymine
+
+IMPR
+CA-CM-CM-CT         1.1          180.          2.   from thymine
+
