@@ -1,0 +1,27 @@
+parm ../Arg133Cys_com.prmtop
+
+trajin ../Arg133Cys_target_run1.nc 10001 100000 10
+trajin ../Arg133Cys_target_run2.nc 10001 100000 10
+trajin ../Arg133Cys_target_run3.nc 10001 100000 10
+
+strip :WAT
+strip :Na+
+strip :Cl-
+
+autoimage
+
+cluster C1 \
+kmeans clusters 2 randompoint maxit 500 \
+rms (:1-69@N,CA,C,O)|(:70-109@P,OP1,OP2,O1P,O2P,O5',C5',C4',C3',O3') \
+sieve 10 random \
+out cnumvtime.dat \
+summary summary.dat \
+info info.dat \
+cpopvtime cpopvtime.dat normframe \
+repout rep \
+repfmt pdb \
+singlerepout singlerep.nc \
+singlerepfmt netcdf
+
+
+run
