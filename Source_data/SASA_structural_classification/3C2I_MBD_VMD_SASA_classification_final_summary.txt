@@ -1,0 +1,26 @@
+3C2I MeCP2 MBD SASA structural classification using VMD
+============================================================
+Protein chain: A
+DNA chains: B C
+Requested residue range: 78-162
+Probe radius: 1.4 A
+SASA samples: 960
+
+Exposure_ratio = SASA_protein / SASA_isolated
+Delta_SASA_DNA = SASA_protein - SASA_complex
+DNA_buried_ratio = (SASA_protein - SASA_complex) / SASA_protein
+
+Classification:
+DNA_buried_ratio > 0.01 -> Protein-DNA interface
+Otherwise Exposure_ratio < 0.20 -> Protein interior
+Otherwise -> Protein surface
+Priority: Protein-DNA interface > Protein interior > Protein surface
+
+Protein interior      : 22 (30.56%)
+Protein surface       : 26 (36.11%)
+Protein-DNA interface : 24 (33.33%)
+Total                  : 72
+
+MSE treatment:
+MSE was treated as MET in VMD memory; SE was renamed SD and radius set to 1.80 A.
+The original PDB coordinates and the PDB file on disk were not modified.
